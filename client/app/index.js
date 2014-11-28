@@ -1,0 +1,1 @@
+var BinaryClient = require('BinaryClient');

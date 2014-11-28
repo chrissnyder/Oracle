@@ -1,0 +1,13 @@
+{
+  "name": "Oracle-Client",
+  "version": "0.0.1",
+  "description": "The all-seeing eye of the public.",
+  "dependencies": {
+    "binaryjs": "^0.2.1",
+    "beefy": "^2.1.1",
+    "browserify": "^6.3.3"
+  },
+  "scripts": {
+    "start": "beefy app/index.js --index=public/index.html"
+  }
+}

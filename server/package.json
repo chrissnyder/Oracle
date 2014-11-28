@@ -1,0 +1,14 @@
+{
+  "name": "Oracle-Server",
+  "version": "0.0.1",
+  "description": "The all-seeing eye of the public.",
+  "main": "index.js",
+  "dependencies": {
+    "binaryjs": "^0.2.1",
+    "browserify": "^6.3.3",
+    "express": "^4.10.4"
+  },
+  "scripts": {
+    "start": "coffee index.coffee"
+  }
+}
