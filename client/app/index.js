@@ -1,6 +1,3 @@
-var BinaryClient = require('binaryjs');
-
-
 navigator.webkitGetUserMedia(
   {
     video: true,
