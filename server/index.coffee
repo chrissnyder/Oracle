@@ -1,11 +1,18 @@
 express = require 'express'
+shortId = require 'shortId'
 app = express()
 
-app.get '/', (req, res) ->
-  res.send 'hello'
+BinaryServer = require('binaryjs').BinaryServer
+fs = require 'fs'
 
-server = app.listen 3000, ->
-  host = server.address().address
-  port = server.address().port
+server = BinaryServer port: 9000
+server.on 'connection', (client) ->
+  id = shortId.generate()
+  file = fs.createWriteStream "#{__dirname}/tmp/#{id}.mp4"
 
-  console.log 'Example app listening at http://%s:%s', host, port
+  client.on 'strean', (stream, meta) ->
+    # client initialized a stream
+    stream.pipe file
+
+  client.on 'close', ->
+    # client closed the connection
